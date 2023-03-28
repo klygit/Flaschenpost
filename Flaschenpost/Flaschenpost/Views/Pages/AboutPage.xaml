@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:flaschenpost="clr-namespace:Flaschenpost" x:DataType="flaschenpost:AboutViewModel"
+             x:Class="Flaschenpost.AboutPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <ContentView Padding="16" >
+                <Label Text="{Binding AboutDisplay}" TextColor="#373a3c" />
+            </ContentView>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

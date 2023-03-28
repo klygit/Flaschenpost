@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:flaschenpost="clr-namespace:Flaschenpost" x:DataType="flaschenpost:SelectSortViewModel"
+             x:Class="Flaschenpost.SelectSortPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <flaschenpost:BoolToColorConverter x:Key="boolToColor" TrueObject="LightGray"  FalseObject="White" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ContentView BackgroundColor="#f3f3f3">
+            <ScrollView >
+                <StackLayout Spacing="0" BindableLayout.ItemsSource="{Binding SortDatas}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Spacing="0" x:DataType="flaschenpost:SelectSortData" >
+                                <ContentView Padding="14" BackgroundColor="{Binding IsSelected, Converter={StaticResource boolToColor}}">
+                                    <Label Text="{Binding DisplayText}" FontSize="14" TextColor="#373a3c" />
+                                </ContentView>
+                                <ContentView HeightRequest="2" BackgroundColor="#f3f3f3" />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type flaschenpost:SelectSortViewModel}}, Path=SortDataTappedCommand}" CommandParameter="{Binding .}" NumberOfTapsRequired="1" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+        </ContentView>
+    </ContentPage.Content>
+</ContentPage>

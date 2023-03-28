@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:flaschenpost="clr-namespace:Flaschenpost" 
+             x:DataType="flaschenpost:ItemsViewModel"
+             x:Class="Flaschenpost.ItemsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding ToolBarItemSortTitle}" IconImageSource="{Binding ToolBarItemSortImgSrc}" Command="{Binding OpenSelectSortPageCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <RefreshView Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsRefreshing}">
+            <CollectionView ItemsSource="{Binding Items}" SelectionMode="None" BackgroundColor="#f3f3f3">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Spacing="0" x:DataType="flaschenpost:Item" >
+                            <flaschenpost:ItemView />
+                            <ContentView HeightRequest="4" BackgroundColor="#f3f3f3" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type flaschenpost:ItemsViewModel}}, Path=ItemTappedCommand}" CommandParameter="{Binding .}" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+
+    </ContentPage.Content>
+</ContentPage>

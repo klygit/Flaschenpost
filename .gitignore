@@ -1,0 +1,16 @@
+.vs/*
+
+Flaschenpost/Flaschenpost/bin/
+Flaschenpost/Flaschenpost/obj/
+
+Flaschenpost/Flaschenpost.Android/bin/
+Flaschenpost/Flaschenpost.Android/obj/
+Flaschenpost/Flaschenpost.Android/Flaschenpost.Android.csproj.user
+Flaschenpost/Flaschenpost.Android/Resources/Resource.designer.cs
+
+Flaschenpost/Flaschenpost.iOS/bin/
+Flaschenpost/Flaschenpost.iOS/obj/
+Flaschenpost/Flaschenpost.iOS/Flaschenpost.iOS.csproj.user
+
+TestProject/bin/
+TestProject/obj/

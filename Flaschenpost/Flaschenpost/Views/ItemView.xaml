@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:flaschenpost="clr-namespace:Flaschenpost"
+             x:Class="Flaschenpost.ItemView">
+    <ContentView.Content>
+        <Grid x:DataType="flaschenpost:Item" Padding="14" ColumnSpacing="0" RowSpacing="0" BackgroundColor="White">
+            <StackLayout Grid.Column="0" Grid.ColumnSpan="1" Spacing="0" VerticalOptions="Center" Padding="0,0,14,0" >
+                <Image Source="{Binding UrlImage}" WidthRequest="30" />
+            </StackLayout>
+            <StackLayout Grid.Column="1" Grid.ColumnSpan="3" Spacing="0" HorizontalOptions="FillAndExpand" >
+                <Label Text="{Binding Name}" FontSize="17" FontAttributes="Bold" TextColor="#373a3c" />
+                <StackLayout Spacing="0">
+                    <ContentView Margin="0,7,0,7" HeightRequest="2" BackgroundColor="#f3f3f3" />
+                    <StackLayout Spacing="0" Orientation="Horizontal">
+                        <StackLayout Padding="0" Margin="0" Spacing="0" HorizontalOptions="FillAndExpand" >
+                            <Label Padding="0" Margin="0" Text="{Binding ShortDescription}" FontSize="16" TextColor="#373a3c" />
+                            <Label Text="{Binding PricePerUnitText}" FontSize="14" TextColor="#9b9c9d" />
+                        </StackLayout>
+                        <Label Text="{Binding PriceDisplay}" FontSize="18" TextColor="#333333" FontAttributes="Bold" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

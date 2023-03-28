@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:flaschenpost="clr-namespace:Flaschenpost" 
+             x:DataType="flaschenpost:ItemDetailViewModel"
+             x:Class="Flaschenpost.ItemDetailPage">
+    <ContentPage.Content>
+        <ScrollView >
+            <StackLayout Spacing="0" BackgroundColor="#f3f3f3" >
+                <ContentView Padding="0,50,0,25">
+                    <flaschenpost:ItemView BindingContext="{Binding Item}"></flaschenpost:ItemView>
+                </ContentView>
+                <ContentView VerticalOptions="FillAndExpand" >
+                    <StackLayout >
+                        <StackLayout Grid.Column="0">
+                            <Label Padding="14" Text="Produktbeschreibung" FontSize="16" FontAttributes="Bold" TextColor="#a50a50" />
+                            <ContentView HeightRequest="2" BackgroundColor="#a50a50" />
+                        </StackLayout>
+                        <ContentView Padding="0,6,0,6">
+                            <ContentView HeightRequest="2" BackgroundColor="#dadada" />
+                        </ContentView>
+                        <Label Padding="14" Text="{Binding DescriptionDisplay}" FontSize="16" TextColor="#8c8c8c" />
+                    </StackLayout>
+                </ContentView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

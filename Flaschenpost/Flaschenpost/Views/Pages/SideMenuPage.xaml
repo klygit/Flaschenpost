@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:flaschenpost="clr-namespace:Flaschenpost" x:DataType="flaschenpost:SideMenuViewModel"
+             x:Class="Flaschenpost.SideMenuPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="4" BackgroundColor="#9b9c9d">
+            <ContentView Padding="14" BackgroundColor="#ffffff">
+                <Image Source="{Binding ImgSrcSideMenuTitleLogo}"  />
+            </ContentView>
+            <ContentView HeightRequest="52" BackgroundColor="#ffffff">
+                <Label Padding="14" Text="{Binding SideMenuItemAboutTitle}" VerticalOptions="CenterAndExpand" FontSize="14" TextColor="#373a3c" />
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ShowAboutPageCommand}" NumberOfTapsRequired="1" />
+                </ContentView.GestureRecognizers>
+            </ContentView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
