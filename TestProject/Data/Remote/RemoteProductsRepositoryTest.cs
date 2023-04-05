@@ -1,5 +1,4 @@
 ﻿using Flaschenpost;
-using System.Printing;
 
 namespace TestProject
 {
@@ -88,9 +87,7 @@ namespace TestProject
             var rep = new RemoteProductsRepository(new DemoRemoteProductsSource());
             var items = await rep.GetItemsAsync(sortId);
 
-            var indexStop = items.Count - 2;
-
-            for (var index = 0; index < indexStop; index++)
+            for (var index = 0; index < items.Count - 1; index++)
             {
                 var item = items[index];
                 var itemNext = items[index + 1];
